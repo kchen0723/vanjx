@@ -6,20 +6,20 @@ services:
     ports:
       - 80:80
     environment:
-      WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_USER: exampleuser
-      WORDPRESS_DB_PASSWORD: examplepass
-      WORDPRESS_DB_NAME: exampledb
+      WORDPRESS_DB_HOST: dbserver
+      WORDPRESS_DB_USER: vanjxdbuser
+      WORDPRESS_DB_PASSWORD: vanjxdb123pwd
+      WORDPRESS_DB_NAME: vanjxdbname
     volumes:
       - wordpress:/var/www/html
 
-  db:
+  dbserver:
     image: mysql:8.0
     restart: always
     environment:
-      MYSQL_DATABASE: exampledb
-      MYSQL_USER: exampleuser
-      MYSQL_PASSWORD: examplepass
+      MYSQL_DATABASE: vanjxdbname
+      MYSQL_USER: vanjxdbuser
+      MYSQL_PASSWORD: vanjxdb123pwd
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
     volumes:
       - db:/var/lib/mysql
